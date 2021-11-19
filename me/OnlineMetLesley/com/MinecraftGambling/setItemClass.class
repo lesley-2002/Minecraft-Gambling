@@ -1,8 +1,10 @@
 
 
-/* Decompiler 10ms, total 223ms, lines 70 */
+/* Decompiler 9ms, total 135ms, lines 81 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
+import org.bukkit.ChatColor;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 public class setItemClass {
@@ -14,6 +16,15 @@ public class setItemClass {
    }
 
    public static void setitems() {
+      ItemMeta meta = LowOrHighInventory.LOW_PANE.getItemMeta();
+      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Displayname")));
+      LowOrHighInventory.LOW_PANE.setItemMeta(meta);
+      ItemMeta meta1 = LowOrHighInventory.HIGH_PANE.getItemMeta();
+      meta1.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LowOrHighGUI.High-Side-Item.Displayname")));
+      LowOrHighInventory.HIGH_PANE.setItemMeta(meta1);
+      ItemMeta meta2 = LowOrHighInventory.MIDDLE_PANE.getItemMeta();
+      meta2.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LowOrHighGUI.Devider-Item.Displayname")));
+      LowOrHighInventory.MIDDLE_PANE.setItemMeta(meta2);
       LowOrHighInventory.loworhigh.setItem(0, LowOrHighInventory.LOW_PANE);
       LowOrHighInventory.loworhigh.setItem(1, LowOrHighInventory.LOW_PANE);
       LowOrHighInventory.loworhigh.setItem(2, LowOrHighInventory.LOW_PANE);
