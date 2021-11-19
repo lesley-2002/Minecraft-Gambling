@@ -28,20 +28,28 @@ Titles:
   Lost: '&cYou lost &4{randomnumber}'
 
 GambleGUI:
+#Displayname of the GUI
   Displayname: '&bChoose your GameMode!'
-  Low-or-high-Material: 'DEAD_BUSH'
+#Material used for the empty slots in the GUI
   Fill-Material: 'STAINED_GLASS_PANE'
   Fill-Data: 15
+#Low or high item in the GambleGUI
+  Low-or-high:
+    Displayname: '&bLow Or High GameMode'
+    Material: 'DEAD_BUSH'
 
 
 LowOrHighGUI: 
   Displayname: '&bChoose &cLow &bor &aHigh'
   Low-Side-Item:
+    Displayname: '&c&lLow'
     Item: 'STAINED_GLASS_PANE'
     Data: 14
   High-Side-Item:
+    Displayname: '&a&lHigh'
     Item: 'STAINED_GLASS_PANE'
     Data: 5
   Devider-Item:
+    Displayname: '&f'
     Item: 'STAINED_GLASS_PANE'
     Data: 15
