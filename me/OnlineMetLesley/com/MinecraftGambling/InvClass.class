@@ -1,0 +1,38 @@
+package me.OnlineMetLesley.com.MinecraftGambling;
+
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.plugin.Plugin;
+
+public class InvClass implements Listener {
+   public static Plugin instance;
+   public static Inventory gamble;
+
+   static {
+      gamble = Bukkit.getServer().createInventory((InventoryHolder)null, 54, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Inventory.Displayname")));
+   }
+
+   public void function() {
+      Main plugin = (Main)Main.instance;
+      plugin.getServer();
+   }
+
+   @EventHandler
+   public void onInventoryClick(InventoryClickEvent event) {
+      Player player = (Player)event.getWhoClicked();
+      if (event.getClickedInventory().equals(gamble)) {
+         event.setCancelled(true);
+         if (event.getCurrentItem().getType() == Material.BAKED_POTATO) {
+            player.sendMessage("Hey you clicked on the baked potato");
+         }
+      }
+
+   }
+}
