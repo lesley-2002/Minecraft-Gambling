@@ -1,25 +1,49 @@
-#What message should be sended when the player wins
-WinMessage: '&fYou win!'
-#What message should be sended when the player loses
-LostMessage: '&fYou lost!'
 
-#What message should be sender when the player wins an amount of money
-AmountwonMessage: '&a&l+${won}'
-#What message should be sended when the player loses an amount of money
-AmountlostMessage: '&c&l-${lost}'
 
-#Not enough money message
-NotEnoughMoney: '&cYou do not have enough money!'
-#Wrong usage message
-WrongUsage: '&cWrong usage, /gamble loworhigh <amount> <loworhigh>'
+#The message the player should receive when he wants to bet money which he doesn't have.
+Not-Enough-Money: '&cYou do not have enough money for this bet!'
 
-#Should the plugin send a title when the player wins?
-SendWinTitle: true
-WinTitle: '&aYou won!'
+#The message the player should receive when he doesn' do the right arguments.
+Wrong-Usage: '&cWrong usage use /gamble <amount>'
 
-#Should the plugin send a title when the player loses?
-SendLostTitle: true
-LostTitle: '&cYou Lost!'
-  
-Inventory:
-  Displayname:
+#What message should the player receive when he opens the Low Or High GUI
+Opened-Low-Or-High-GUI: '&bYou opened the Low Or High GUI'
+
+#Explanation to the player when he opens the Low Or High GUI.
+Choose-Low-Or-High-Message: '&3Choose Low Or High!'
+
+Bet-On-Low: '&bYou bet on &cLow'
+Bet-On-High: '&bYou bet on &aHigh'
+
+#Message the player should get when he clicks on Low Or High
+BetAmount: '&c&l-${amount}'
+
+#The message the player gets when he wins money
+WonAmount: '&a&l+${won}'
+
+Titles:
+  Countdown:
+    Three: '&b3'
+    Two: '&b2'
+    One: '&b1'
+  Won: '&aYou won &b{randomnumber}'
+  Lost: '&cYou lost &4{randomnumber}'
+
+GambleGUI:
+  Displayname: '&bChoose your GameMode!'
+  Low-or-high-Material: 'DEAD_BUSH'
+  Fill-Material: 'STAINED_GLASS_PANE'
+  Fill-Data: 15
+
+
+LowOrHighGUI: 
+  Displayname: '&bChoose &cLow &bor &aHigh'
+  Low-Side-Item:
+    Item: 'STAINED_GLASS_PANE'
+    Data: 14
+  High-Side-Item:
+    Item: 'STAINED_GLASS_PANE'
+    Data: 5
+  Devider-Item:
+    Item: 'STAINED_GLASS_PANE'
+    Data: 15
