@@ -1,0 +1,137 @@
+
+
+/* Decompiler 18ms, total 149ms, lines 134 */
+package me.OnlineMetLesley.com.MinecraftGambling;
+
+import com.connorlinfoot.titleapi.TitleAPI;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
+
+public class LowOrHighInventory implements Listener {
+   public static Plugin instance;
+   public static Inventory loworhigh;
+   public static ItemStack LOW_PANE;
+   public static ItemStack HIGH_PANE;
+   public static ItemStack MIDDLE_PANE;
+
+   static {
+      loworhigh = Bukkit.getServer().createInventory((InventoryHolder)null, 54, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LowOrHighGUI.Displayname")));
+      LOW_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.Low-Side-Item.Item.Data"));
+      HIGH_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.High-Side-Item.Data"));
+      MIDDLE_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Devider-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.Devider-Item.Data"));
+   }
+
+   public void function() {
+      Main plugin = (Main)Main.instance;
+      plugin.getServer();
+   }
+
+   @EventHandler
+   public void onInventoryClick(InventoryClickEvent event) {
+      int random = Main.getRandomInt(100);
+      Player player = (Player)event.getWhoClicked();
+      if (event.getClickedInventory().equals(loworhigh)) {
+         event.setCancelled(true);
+         if (event.getCurrentItem().equals(LOW_PANE)) {
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Bet-On-Low")));
+            player.closeInventory();
+            Main.econ.withdrawPlayer(player, (double)CommandClass.num);
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("BetAmount").replace("{amount}", String.valueOf(CommandClass.num))));
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var12) {
+               var12.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.Three")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var11) {
+               var11.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.Two")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var10) {
+               var10.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.One")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var9) {
+               var9.printStackTrace();
+            }
+
+            if (random > 0 && random < 50) {
+               Main.econ.depositPlayer(player, (double)(CommandClass.num * 2));
+               TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Won").replace("{randomnumber}", String.valueOf(random))), "");
+               player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WonAmount").replace("{won}", String.valueOf(CommandClass.num * 2))));
+            } else {
+               TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Lost").replace("{randomnumber}", String.valueOf(random))), "");
+            }
+         }
+
+         if (event.getCurrentItem().equals(HIGH_PANE)) {
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Bet-On-High")));
+            player.closeInventory();
+            Main.econ.withdrawPlayer(player, (double)CommandClass.num);
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("BetAmount").replace("{amount}", String.valueOf(CommandClass.num))));
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var8) {
+               var8.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.Three")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var7) {
+               var7.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.Two")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var6) {
+               var6.printStackTrace();
+            }
+
+            TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Countdown.One")), "");
+
+            try {
+               Thread.sleep(1000L);
+            } catch (InterruptedException var5) {
+               var5.printStackTrace();
+            }
+
+            if (random > 50 && random < 100) {
+               Main.econ.depositPlayer(player, (double)(CommandClass.num * 2));
+               TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Won").replace("{randomnumber}", String.valueOf(random))), "");
+               player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WonAmount").replace("{won}", String.valueOf(CommandClass.num * 2))));
+            } else {
+               TitleAPI.sendTitle(player, 10, 10, 10, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Titles.Lost").replace("{randomnumber}", String.valueOf(random))), "");
+            }
+         }
+      }
+
+   }
+}
+
