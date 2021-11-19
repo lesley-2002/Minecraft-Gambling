@@ -1,0 +1,90 @@
+package me.OnlineMetLesley.com.MinecraftGambling;
+
+import com.connorlinfoot.titleapi.TitleAPI;
+import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+
+public class CommandClass implements CommandExecutor {
+   public static Plugin instance;
+
+   public void function() {
+      Main plugin = (Main)Main.instance;
+      plugin.getServer();
+   }
+
+   public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+      int random = Main.getRandomInt(100);
+      if (sender instanceof Player) {
+         Player player = (Player)sender;
+         if (command.getName().equalsIgnoreCase("gamble")) {
+            if (args.length == 0) {
+               player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WrongUsage")));
+            }
+
+            if (args.length == 1 && args[0].equalsIgnoreCase("loworhigh")) {
+               player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WrongUsage")));
+            }
+
+            if (args.length == 2 && args[0].equalsIgnoreCase("loworhigh") && Main.isInt(args[1])) {
+               player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WrongUsage")));
+            }
+
+            if (args.length == 3 && args[0].equalsIgnoreCase("loworhigh") && Main.isInt(args[1])) {
+               int num;
+               if (args[2].equalsIgnoreCase("low")) {
+                  num = Integer.parseInt(args[1]);
+                  if (Main.econ.has(player, (double)num)) {
+                     Main.econ.withdrawPlayer(player, (double)num);
+                     if (random > 0 && random < 50) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WinMessage")));
+                        Main.econ.depositPlayer(player, (double)(num * 2));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountwonMessage").replace("{won}", "" + num * 2)));
+                        if (Main.instance.getConfig().getBoolean("SendWinTitle")) {
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("WinTitle"));
+                        }
+                     } else {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LostMessage")));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountlostMessage").replace("{lost}", "" + num * 2)));
+                        if (Main.instance.getConfig().getBoolean("SendLostTitle")) {
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("LostTitle"));
+                        }
+                     }
+                  } else {
+                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("NotEnoughMoney")));
+                  }
+               } else if (args[2].equalsIgnoreCase("high")) {
+                  num = Integer.parseInt(args[1]);
+                  if (Main.econ.has(player, (double)num)) {
+                     Main.econ.withdrawPlayer(player, (double)num);
+                     if (random > 50 && random < 100) {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("WinMessage")));
+                        Main.econ.depositPlayer(player, (double)(num * 2));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountwonMessage").replace("{won}", "" + num * 2)));
+                        if (Main.instance.getConfig().getBoolean("SendWinTitle") && Main.instance.getConfig().getBoolean("SendWonTitle")) {
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("WinTitle"));
+                        }
+                     } else {
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LostMessage")));
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountlostMessage").replace("{lost}", "" + num * 2)));
+                        if (Main.instance.getConfig().getBoolean("SendLostTitle")) {
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("LostTitle"));
+                        }
+                     }
+                  } else {
+                     player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("NotEnoughMoney")));
+                  }
+               }
+            }
+         }
+      } else {
+         sender.sendMessage(ChatColor.RED + "You are not an player!");
+      }
+
+      return false;
+   }
+}
+
