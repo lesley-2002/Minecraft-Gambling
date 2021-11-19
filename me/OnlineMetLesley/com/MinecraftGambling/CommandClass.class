@@ -1,3 +1,6 @@
+
+
+/* Decompiler 15ms, total 149ms, lines 90 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import com.connorlinfoot.titleapi.TitleAPI;
@@ -44,13 +47,13 @@ public class CommandClass implements CommandExecutor {
                         Main.econ.depositPlayer(player, (double)(num * 2));
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountwonMessage").replace("{won}", "" + num * 2)));
                         if (Main.instance.getConfig().getBoolean("SendWinTitle")) {
-                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("SendWinTitle.WinTitle"));
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("WinTitle"));
                         }
                      } else {
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LostMessage")));
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountlostMessage").replace("{lost}", "" + num * 2)));
                         if (Main.instance.getConfig().getBoolean("SendLostTitle")) {
-                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("SendLostTitle.LostTitle"));
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("LostTitle"));
                         }
                      }
                   } else {
@@ -65,13 +68,13 @@ public class CommandClass implements CommandExecutor {
                         Main.econ.depositPlayer(player, (double)(num * 2));
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountwonMessage").replace("{won}", "" + num * 2)));
                         if (Main.instance.getConfig().getBoolean("SendWinTitle") && Main.instance.getConfig().getBoolean("SendWonTitle")) {
-                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("SendWinTitle.WinTitle"));
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("WinTitle"));
                         }
                      } else {
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LostMessage")));
                         player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("AmountlostMessage").replace("{lost}", "" + num * 2)));
                         if (Main.instance.getConfig().getBoolean("SendLostTitle")) {
-                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("SendLostTitle.LostTitle"));
+                           TitleAPI.sendTitle(player, 10, 5, 10, String.valueOf(random), Main.instance.getConfig().getString("LostTitle"));
                         }
                      }
                   } else {
@@ -87,3 +90,4 @@ public class CommandClass implements CommandExecutor {
       return false;
    }
 }
+
