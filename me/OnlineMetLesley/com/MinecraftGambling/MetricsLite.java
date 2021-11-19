@@ -1,6 +1,3 @@
-
-
-/* Decompiler 42ms, total 182ms, lines 274 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import com.google.gson.JsonArray;
