@@ -1,6 +1,6 @@
 
 
-/* Decompiler 4ms, total 134ms, lines 58 */
+/* Decompiler 11ms, total 136ms, lines 62 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import org.bukkit.Bukkit;
@@ -13,6 +13,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 
 public class GambleInventory implements Listener {
@@ -22,7 +23,7 @@ public class GambleInventory implements Listener {
 
    static {
       gamble = Bukkit.getServer().createInventory((InventoryHolder)null, 9, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("GambleGUI.Displayname")));
-      gamemodeloworhigh = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("GambleGUI.Low-or-high-Material")));
+      gamemodeloworhigh = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("GambleGUI.Low-or-high.Material")));
    }
 
    public void function() {
@@ -47,6 +48,9 @@ public class GambleInventory implements Listener {
    }
 
    public static void setGambleitems() {
+      ItemMeta meta = gamemodeloworhigh.getItemMeta();
+      meta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("GambleGUI.Low-or-high.Displayname")));
+      gamemodeloworhigh.setItemMeta(meta);
       gamble.setItem(0, LowOrHighInventory.MIDDLE_PANE);
       gamble.setItem(1, LowOrHighInventory.MIDDLE_PANE);
       gamble.setItem(2, LowOrHighInventory.MIDDLE_PANE);
