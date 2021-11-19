@@ -1,9 +1,11 @@
 
 
-/* Decompiler 28ms, total 154ms, lines 134 */
-package me.OnlineMetLesley.com.MinecraftGambling;
+/* Decompiler 18ms, total 155ms, lines 136 */
+package me.OnlineMetLesley.com.MinecraftGambling.LowOrHigh;
 
 import com.connorlinfoot.titleapi.TitleAPI;
+import me.OnlineMetLesley.com.MinecraftGambling.Main;
+import me.OnlineMetLesley.com.MinecraftGambling.Gamble.CommandClass;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
