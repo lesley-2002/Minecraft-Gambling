@@ -1,6 +1,6 @@
 
 
-/* Decompiler 3ms, total 132ms, lines 58 */
+/* Decompiler 4ms, total 134ms, lines 58 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import org.bukkit.Bukkit;
@@ -35,7 +35,7 @@ public class GambleInventory implements Listener {
       Player player = (Player)event.getWhoClicked();
       if (event.getClickedInventory().equals(gamble)) {
          event.setCancelled(true);
-         if (event.getSlot() == 3) {
+         if (event.getCurrentItem().equals(gamemodeloworhigh)) {
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("Opened-Low-Or-High-GUI")));
             setItemClass.setitems();
             player.closeInventory();
