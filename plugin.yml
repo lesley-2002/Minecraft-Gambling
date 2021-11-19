@@ -1,0 +1,11 @@
+name: MinecraftGambling
+version: 1.0
+author: OnlineMetLesley
+main: me.OnlineMetLesley.com.MinecraftGambling.Main
+depend: [Vault]
+softdepend: [TitleAPI]
+
+
+commands:
+  gamble:
+    description: Main command off Minecraft Gambling
