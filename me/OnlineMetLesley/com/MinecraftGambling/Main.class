@@ -1,10 +1,13 @@
 
 
-/* Decompiler 18ms, total 156ms, lines 79 */
+/* Decompiler 21ms, total 146ms, lines 82 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import java.util.HashMap;
 import java.util.Random;
+import me.OnlineMetLesley.com.MinecraftGambling.Gamble.CommandClass;
+import me.OnlineMetLesley.com.MinecraftGambling.Gamble.GambleInventory;
+import me.OnlineMetLesley.com.MinecraftGambling.LowOrHigh.LowOrHighInventory;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.permission.Permission;
