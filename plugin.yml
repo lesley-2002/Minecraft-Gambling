@@ -1,5 +1,5 @@
 name: MinecraftGambling
-version: 1.0
+version: 1.1
 author: OnlineMetLesley
 main: me.OnlineMetLesley.com.MinecraftGambling.Main
 depend: [Vault]
