@@ -1,3 +1,5 @@
+
+
 #The message the player should receive when he wants to bet money which he doesn't have.
 Not-Enough-Money: '&cYou do not have enough money for this bet!'
 
@@ -53,3 +55,5 @@ LowOrHighGUI:
     Displayname: '&f'
     Item: 'STAINED_GLASS_PANE'
     Data: 15
+    
+
