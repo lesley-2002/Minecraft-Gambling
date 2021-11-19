@@ -1,6 +1,6 @@
 
 
-/* Decompiler 18ms, total 149ms, lines 134 */
+/* Decompiler 15ms, total 144ms, lines 134 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import com.connorlinfoot.titleapi.TitleAPI;
@@ -25,7 +25,7 @@ public class LowOrHighInventory implements Listener {
 
    static {
       loworhigh = Bukkit.getServer().createInventory((InventoryHolder)null, 54, ChatColor.translateAlternateColorCodes('&', Main.instance.getConfig().getString("LowOrHighGUI.Displayname")));
-      LOW_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.Low-Side-Item.Item.Data"));
+      LOW_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.Low-Side-Item.Data"));
       HIGH_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Low-Side-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.High-Side-Item.Data"));
       MIDDLE_PANE = new ItemStack(Material.valueOf(Main.instance.getConfig().getString("LowOrHighGUI.Devider-Item.Item")), 1, (byte)Main.instance.getConfig().getInt("LowOrHighGUI.Devider-Item.Data"));
    }
