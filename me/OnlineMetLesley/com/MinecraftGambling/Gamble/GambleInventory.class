@@ -1,8 +1,8 @@
+package me.OnlineMetLesley.com.MinecraftGambling.Gamble;
 
-
-/* Decompiler 11ms, total 136ms, lines 62 */
-package me.OnlineMetLesley.com.MinecraftGambling;
-
+import me.OnlineMetLesley.com.MinecraftGambling.Main;
+import me.OnlineMetLesley.com.MinecraftGambling.LowOrHigh.LowOrHighInventory;
+import me.OnlineMetLesley.com.MinecraftGambling.LowOrHigh.setItemClass;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -62,4 +62,3 @@ public class GambleInventory implements Listener {
       gamble.setItem(8, LowOrHighInventory.MIDDLE_PANE);
    }
 }
-
