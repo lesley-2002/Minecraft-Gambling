@@ -1,0 +1,22 @@
+#What message should be sended when the player wins
+WinMessage: '&fYou win!'
+#What message should be sended when the player loses
+LostMessage: '&fYou lost!'
+
+#What message should be sender when the player wins an amount of money
+AmountwonMessage: '&a&l+${won}'
+#What message should be sended when the player loses an amount of money
+AmountlostMessage: '&c&l-${lost}'
+
+#Not enough money message
+NotEnoughMoney: '&cYou do not have enough money!'
+#Wrong usage message
+WrongUsage: '&cWrong usage, /gamble loworhigh <amount> <loworhigh>'
+
+#Should the plugin send a title when the player wins?
+SendWinTitle: true
+#Should the plugin send a title when the player loses?
+SendLostTitle: true
+
+WinTitle: '&aYou won!'
+LostTitle: '&cYou Lost!'
