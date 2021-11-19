@@ -1,0 +1,73 @@
+
+
+/* Decompiler 15ms, total 143ms, lines 70 */
+package me.OnlineMetLesley.com.MinecraftGambling;
+
+import org.bukkit.plugin.Plugin;
+
+public class setItemClass {
+   public static Plugin instance;
+
+   public void function() {
+      Main plugin = (Main)Main.instance;
+      plugin.getServer();
+   }
+
+   public static void setitems() {
+      LowOrHighInventory.loworhigh.setItem(0, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(1, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(2, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(3, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(4, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(5, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(6, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(7, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(8, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(9, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(10, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(11, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(12, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(13, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(14, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(15, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(16, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(17, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(18, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(19, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(20, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(21, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(22, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(23, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(24, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(25, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(26, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(27, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(28, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(29, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(30, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(31, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(32, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(33, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(34, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(35, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(36, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(37, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(38, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(39, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(40, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(41, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(42, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(43, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(44, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(45, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(46, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(47, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(48, LowOrHighInventory.LOW_PANE);
+      LowOrHighInventory.loworhigh.setItem(49, LowOrHighInventory.MIDDLE_PANE);
+      LowOrHighInventory.loworhigh.setItem(50, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(51, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(52, LowOrHighInventory.HIGH_PANE);
+      LowOrHighInventory.loworhigh.setItem(53, LowOrHighInventory.HIGH_PANE);
+   }
+}
+
