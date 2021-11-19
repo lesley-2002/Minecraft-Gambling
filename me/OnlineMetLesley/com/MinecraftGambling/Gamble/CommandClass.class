@@ -1,8 +1,9 @@
 
 
-/* Decompiler 8ms, total 135ms, lines 50 */
-package me.OnlineMetLesley.com.MinecraftGambling;
+/* Decompiler 7ms, total 148ms, lines 51 */
+package me.OnlineMetLesley.com.MinecraftGambling.Gamble;
 
+import me.OnlineMetLesley.com.MinecraftGambling.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
