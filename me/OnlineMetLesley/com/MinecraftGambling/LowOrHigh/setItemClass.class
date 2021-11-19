@@ -1,8 +1,9 @@
 
 
-/* Decompiler 9ms, total 135ms, lines 81 */
-package me.OnlineMetLesley.com.MinecraftGambling;
+/* Decompiler 5ms, total 140ms, lines 82 */
+package me.OnlineMetLesley.com.MinecraftGambling.LowOrHigh;
 
+import me.OnlineMetLesley.com.MinecraftGambling.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
