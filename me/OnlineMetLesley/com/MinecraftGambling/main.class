@@ -1,0 +1,73 @@
+package me.OnlineMetLesley.com.MinecraftGambling;
+
+import java.util.Random;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.permission.Permission;
+import org.bukkit.Bukkit;
+import org.bukkit.Server;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.RegisteredServiceProvider;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class Main extends JavaPlugin {
+   public FileConfiguration config = this.getConfig();
+   Server getserver = this.getServer();
+   public static Economy econ;
+   public static Permission perms;
+   public static Chat chat;
+   public static Plugin instance;
+
+   public Plugin getInstance() {
+      return instance;
+   }
+
+   public static Integer getRandomInt(Integer max) {
+      Random ran = new Random();
+      return ran.nextInt(max);
+   }
+
+   public static boolean isInt(String s) {
+      try {
+         Integer.parseInt(s);
+         return true;
+      } catch (NumberFormatException var2) {
+         return false;
+      }
+   }
+
+   public void onEnable() {
+      instance = this;
+      this.saveDefaultConfig();
+      this.config.options().copyDefaults(true);
+      if (!this.setupEconomy()) {
+         this.getLogger().severe("Disabled due to no Vault dependency found!");
+         Bukkit.getPluginManager().disablePlugin(this);
+      } else {
+         new MetricsLite(this);
+         this.getCommand("gamble").setExecutor(new CommandClass());
+      }
+   }
+
+   public void onDisable() {
+   }
+
+   private boolean setupEconomy() {
+      if (Bukkit.getPluginManager().getPlugin("Vault") == null) {
+         return false;
+      } else {
+         RegisteredServiceProvider<Economy> rsp = this.getServer().getServicesManager().getRegistration(Economy.class);
+         if (rsp == null) {
+            return false;
+         } else {
+            econ = (Economy)rsp.getProvider();
+            return econ != null;
+         }
+      }
+   }
+
+   public Economy getEconomy() {
+      return econ;
+   }
+}
