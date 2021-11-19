@@ -1,3 +1,6 @@
+
+
+/* Decompiler 8ms, total 135ms, lines 50 */
 package me.OnlineMetLesley.com.MinecraftGambling;
 
 import org.bukkit.ChatColor;
@@ -47,3 +50,4 @@ public class CommandClass implements CommandExecutor {
       return false;
    }
 }
+
