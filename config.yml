@@ -15,8 +15,11 @@ WrongUsage: '&cWrong usage, /gamble loworhigh <amount> <loworhigh>'
 
 #Should the plugin send a title when the player wins?
 SendWinTitle: true
-  WinTitle: '&aYou won!'
-  
+WinTitle: '&aYou won!'
+
 #Should the plugin send a title when the player loses?
 SendLostTitle: true
-  LostTitle: '&cYou Lost!'
+LostTitle: '&cYou Lost!'
+  
+Inventory:
+  Displayname:
